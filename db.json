@@ -1,0 +1,58 @@
+{
+  "claims": [
+    {
+      "id": 1,
+      "memberName": "Franks Holland",
+      "atFault": false,
+      "vehicle": "2011 Acura TSX",
+      "opName": "Britt Gould",
+      "opVehicle": "2010 Toyota Camry",
+      "opInsurance": "Geico"
+    },
+    {
+      "id": 2,
+      "memberName": "Adele Herring",
+      "atFault": false,
+      "vehicle": "2000 Chevy Silverado",
+      "opName": "Burnett Terry",
+      "opVehicle": "1998 Toyota 4Runner",
+      "opInsurance": "Safe Auto"
+    },
+    {
+      "id": 3,
+      "memberName": "Maricela Gamble",
+      "atFault": false,
+      "vehicle": "2006 Porsche Cayenne",
+      "opName": "Wolfe Knapp",
+      "opVehicle": "2011 Acura TSX",
+      "opInsurance": "The General"
+    },
+    {
+      "id": 4,
+      "memberName": "Marlene Goff",
+      "atFault": true,
+      "vehicle": "2015 Mercedes-Benz E500",
+      "opName": "Whitley Dickson",
+      "opVehicle": "2003 Mercedes-Benz SLK320",
+      "opInsurance": "Progressive"
+    },
+    {
+      "id": 5,
+      "memberName": "Ericka Davidson",
+      "atFault": true,
+      "vehicle": "2015 Dodge Challenger",
+      "opName": "Wiggins Oneal",
+      "opVehicle": "2002 Panoz Esperante",
+      "opInsurance": "Nationwide"
+    },
+    {
+      "id": 6,
+      "memberName": "Julie Booth",
+      "atFault": false,
+      "vehicle": "2015 Chevy Aveo",
+      "opName": "Eileen Alford",
+      "opVehicle": "2001 Dodge Dakota",
+      "opInsurance": "Acium"
+    }
+  ]
+}

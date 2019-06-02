@@ -1,0 +1,24 @@
+{
+  "name": "quarter-one-project",
+  "version": "1.0.0",
+  "description": "## Getting Started",
+  "main": "script.js",
+  "scripts": {
+    "server": "json-server --watch db.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gSchool/usaa-phx-quarter-one-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gSchool/usaa-phx-quarter-one-project/issues"
+  },
+  "homepage": "https://github.com/gSchool/usaa-phx-quarter-one-project#readme",
+  "devDependencies": {
+    "json-server": "^0.15.0"
+  }
+}
