@@ -20,8 +20,20 @@ You have been tasked to create a claims intake app that will allow you to intake
 
 ### Layout
 
-- As a user, when I land on any page, I see a navbar on the top and the area below contains a left and right section. The left section is the sidebar navigation that has the two links we can click on to take us to different pages. The right section is the main content area. (See diagrams below for a visual representation)
+- As a user, when I land on ^any page^, I see a 
+  *navbar on the top and the 
+    *area below contains a 
+      *left and right section. 
+
+The left section is the 
+  *sidebar navigation that has the 
+    *two links we can click on to take us to different pages. 
+
+The right section is the 
+  *main content area. (See diagrams below for a visual representation)
+
 - As a user, when I click on the "Create New Claim" link on the left side, it takes me to `/new-claim.html`
+
 - As a user, when I click on the "Manage Claims" link on the left side, it takes me to `/index.html` or just `/` for short
 
 ### Create Claim Form
