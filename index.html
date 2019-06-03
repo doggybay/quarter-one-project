@@ -20,21 +20,25 @@
     <div class="container-fluid">
       <!-- Start of app -->
       <div class="row">
-        <!-- Start of link container -->
-        <div id="links" class="col-md-2 vh-100 links">
 
-          <div id="link" class="row row1">
-            <a class="button btn-secondary btn-block" href="#">Create New Claim</a>
-          </div>
-          <div class="row row2">
-            <a class="button btn-secondary btn-block" href="#">Manage Claims</a>
-          </div>
+        <!-- Start of link container -->
+        <div id="link-container" class="col-md-3 vh-100">
+          <!-- Start of create new claim link -->
+          <div id="create-new-claim-link" class="row links">
+            <a class="link btn-block" href="#">Create New Claim</a>
+          </div> <!-- End of create new claim link -->
+
+          <!-- Start of manage claims link -->
+          <div id="manage-claims-link" class="row links">
+            <a class="link btn-block" href="#">Manage Claims</a>
+          </div> <!-- End of manage claims link -->
+
         </div> <!-- End of link container -->
 
         <!-- Start of claim container -->
         <div id="view-pane" class="col-md view-pane">
 
-          <h1>2 of 2</h1>
+          <h1>Claim View</h1>
 
           <!-- Start of claim table -->
           <table class="table table-hover">
@@ -52,19 +56,19 @@
             </thead>
             <tbody>
               <tr>
-                <td>Mark Otto</td>
-                <td>d23d</td>
-                <td>Year Make Model</td>
-                <td>AF/NAF</td>
-                <td>Jacob Thornton</td>
-                <td>Year Make Model</td>
-                <td>Some Insurance</td>
-                <td>
-                  <button type="button" class="btn btn-danger">Danger</button>
+                <td id="member-name">Mark Otto</td>
+                <td id="policy-num">d23d</td>
+                <td id="vehicle">Year Make Model</td>
+                <td id="fault">AF/NAF</td>
+                <td id="claimant-name">Jacob Thornton</td>
+                <td id="claimant-vehicle">Year Make Model</td>
+                <td id="claimant-insurance">Some Insurance</td>
+                <td id="manage">
+                  <button type="button" class="btn btn-danger">Delete</button>
                 </td>
               </tr>
               <tr>
-                <td>Jacob Thornton</td>
+                <td id="member-name">Jacob Thornton</td>
                 <td>R4M5</td>
                 <td>Year Make Model</td>
                 <td>AF/NAF</td>
@@ -72,11 +76,11 @@
                 <td>Year Make Model</td>
                 <td>Some Insurance</td>
                 <td>
-                  <button type="button" class="btn btn-danger">Danger</button>
+                  <button type="button" class="btn btn-danger">Delete</button>
                 </td>
               </tr>
               <tr>
-                <td>Larry Bird</td>
+                <td id="member-name">Larry Bird</td>
                 <td>H0M3</td>
                 <td>Year Make Model</td>
                 <td>AF/NAF</td>
@@ -84,7 +88,7 @@
                 <td>Year Make Model</td>
                 <td>Some Insurance</td>
                 <td>
-                  <button type="button" class="btn btn-danger">Danger</button>
+                  <button type="button" class="btn btn-danger">Delete</button>
                 </td>
               </tr>
             </tbody>
