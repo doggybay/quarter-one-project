@@ -1,11 +1,9 @@
-
-
 //Claim insertion
 axios.get(`http://localhost:3000/claims`)
   .then(response => {
     let claims = response.data;
     let bodyEntryPoint = document.getElementById('body-entry-point')
-    //console.log('claims: ', claims)
+    console.log('claims: ', claims)
 
     claims.forEach(claim => {
       let newClaim = document.createElement('tr');
@@ -15,13 +13,13 @@ axios.get(`http://localhost:3000/claims`)
       <td id="vehicle">${claim.vehicle}</td>
       <td id="fault">${claim.atFault}</td>
       <td id="claimant-name">${claim.opName}</td>
-      <td id="claimant-vehicle">${claim.opVehile}</td>
+      <td id="claimant-vehicle">${claim.opVehicle}</td>
       <td id="claimant-insurance">${claim.opInsurance}</td>
       <td id="manage">
         <button type="button" class="btn btn-danger">Delete</button>
       </td>
       `;
-      //newClaim.classList.add('claim-row');
+      //Insert new claim into the claim view
       bodyEntryPoint.appendChild(newClaim);
 
       let buttons = newClaim.children[7];
@@ -29,6 +27,7 @@ axios.get(`http://localhost:3000/claims`)
       manageHead.classList.add('invisible');
       buttons.classList.add('invisible');
       
+      //start of delete button listener
       newClaim.addEventListener('click', () => {
         axios.delete(`http://localhost:3000/claims/${claim.id}`, {
           data: {

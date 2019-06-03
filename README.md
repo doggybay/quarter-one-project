@@ -20,7 +20,7 @@ You have been tasked to create a claims intake app that will allow you to intake
 
 ### Layout
 
-- As a user, when I land on ^any page^, I see a 
+<!-- - As a user, when I land on ^any page^, I see a 
   *navbar on the top and the 
     *area below contains a 
       *left and right section. 
@@ -34,7 +34,7 @@ The right section is the
 
 - As a user, when I click on the "Create New Claim" link on the left side, it takes me to `/new-claim.html`
 
-- As a user, when I click on the "Manage Claims" link on the left side, it takes me to `/index.html` or just `/` for short
+- As a user, when I click on the "Manage Claims" link on the left side, it takes me to `/index.html` or just `/` for short -->
 
 ### Create Claim Form
 
@@ -48,7 +48,9 @@ The right section is the
   - "Other party name"
   - "Other party vehicle"
   - "Other party insurance"
+
 - As a user, when I submit the add claim form, it makes a POST request to `http://localhost:3000/claims` with the form data, then it will redirect the page to `/index.html` or just `/` for short. When the new page loads, the new data that you added should appear.
+
   - STRETCH: As a user, when I submit the form, it will validate the fields to make sure that all forms fields are filled out
   - STRETCH: As a user, when I submit the form, if the policyholder is at fault, a funny sad GIF will appear below the form for 5 seconds before it redirects. If the policyholder is not at fault, a funny celebration GIF will show below the form for 5 seconds before it redirects
 
