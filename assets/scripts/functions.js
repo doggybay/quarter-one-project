@@ -1,5 +1,4 @@
 /********** Filter by Name Function **********/
-
 function filterNames(input, table) {
   let nameFilter = input.value.toLowerCase();
 
@@ -137,5 +136,4 @@ function validateAndSubmit(event, newClaimForm) {
       .then(response => console.log(response.data))
       .catch(error => console.log(error));
   }
-  
 }
