@@ -1,7 +1,7 @@
 {
-  "claims": [
-    {
+  "claims": [{
       "id": 1,
+      "policyNumber": 1850248,
       "memberName": "Franks Holland",
       "atFault": false,
       "vehicle": "2011 Acura TSX",
@@ -11,6 +11,7 @@
     },
     {
       "id": 2,
+      "policyNumber": 1850249,
       "memberName": "Adele Herring",
       "atFault": false,
       "vehicle": "2000 Chevy Silverado",
@@ -20,6 +21,7 @@
     },
     {
       "id": 3,
+      "policyNumber": 1850368,
       "memberName": "Maricela Gamble",
       "atFault": false,
       "vehicle": "2006 Porsche Cayenne",
@@ -29,6 +31,7 @@
     },
     {
       "id": 4,
+      "policyNumber": 1858328,
       "memberName": "Marlene Goff",
       "atFault": true,
       "vehicle": "2015 Mercedes-Benz E500",
@@ -38,6 +41,7 @@
     },
     {
       "id": 5,
+      "policyNumber": 1830548,
       "memberName": "Ericka Davidson",
       "atFault": true,
       "vehicle": "2015 Dodge Challenger",
@@ -47,6 +51,7 @@
     },
     {
       "id": 6,
+      "policyNumber": 1926248,
       "memberName": "Julie Booth",
       "atFault": false,
       "vehicle": "2015 Chevy Aveo",
@@ -55,118 +60,24 @@
       "opInsurance": "Acium"
     },
     {
-      "id": 109
+      "policyNumber": "1850248",
+      "memberName": "Franks Holland",
+      "atFault": "False",
+      "vehicle": "2011 Acura TSX",
+      "opName": "Jane Smith",
+      "opVehicle": "2007 Scion TC",
+      "opInsurance": "Amica",
+      "id": 7
     },
     {
-      "id": 110
-    },
-    {
-      "id": 111
-    },
-    {
-      "id": 112
-    },
-    {
-      "id": 113
-    },
-    {
-      "id": 114
-    },
-    {
-      "id": 115
-    },
-    {
-      "id": 116
-    },
-    {
-      "id": 117
-    },
-    {
-      "id": 118
-    },
-    {
-      "id": 119
-    },
-    {
-      "id": 120
-    },
-    {
-      "id": 121
-    },
-    {
-      "id": 122
-    },
-    {
-      "id": 123
-    },
-    {
-      "id": 124
-    },
-    {
-      "id": 125
-    },
-    {
-      "id": 126
-    },
-    {
-      "id": 127
-    },
-    {
-      "id": 128
-    },
-    {
-      "id": 129
-    },
-    {
-      "id": 130
-    },
-    {
-      "id": 131
-    },
-    {
-      "id": 132
-    },
-    {
-      "id": 133
-    },
-    {
-      "id": 134
-    },
-    {
-      "id": 135
-    },
-    {
-      "id": 136
-    },
-    {
-      "id": 137
-    },
-    {
-      "id": 138
-    },
-    {
-      "id": 139
-    },
-    {
-      "id": 140
-    },
-    {
-      "id": 141
-    },
-    {
-      "id": 142
-    },
-    {
-      "id": 143
-    },
-    {
-      "id": 144
-    },
-    {
-      "id": 145
-    },
-    {
-      "id": 146
+      "policyNumber": "1262837",
+      "memberName": "John Doe",
+      "atFault": "True",
+      "vehicle": "2005 Acura RSX",
+      "opName": "Robert Paulson",
+      "opVehicle": "1967 Ford Mustange",
+      "opInsurance": "Allstate",
+      "id": 8
     }
   ]
 }

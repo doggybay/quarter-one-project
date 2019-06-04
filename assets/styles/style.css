@@ -1,5 +1,5 @@
 .navi {
-  background-color: blue;
+  background-color: black;
 }
 
 .links {
@@ -18,3 +18,10 @@
   font-size: 1.1rem
 }
 
+#manage {
+  display: flex
+}
+
+th {
+  background-color:
+}

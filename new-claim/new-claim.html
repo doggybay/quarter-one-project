@@ -41,9 +41,9 @@
 
       <!-- Start of claim container -->
       <div id="view-pane" class="col-md view-pane">
-        
+
         <!-- TODO add action="/index.html" to the form to redirect to claim view -->
-        <form id="new-claim-form" name="new-claim-form">
+        <form id="new-claim-form" name="new-claim-form" action="/index.html">
           <div class="form-group">
             <label for="member-name">Member Name</label>
             <input type="text" class="form-control" id="member-name" placeholder="Enter full name">
@@ -55,7 +55,7 @@
           </div>
           
           <div class="form-group">
-            <label for="member-vehicle">Vehicle</label>
+            <label for="member-vehicle">Vehicle (Year, Make, Model)</label>
             <input type="text" class="form-control" id="member-vehicle" placeholder="Year Make Model">
           </div>
 
@@ -80,10 +80,28 @@
 
           <div class="form-group">
             <label for="claimant-insurance">Claimant Insurance</label>
-            <input type="text" class="form-control" id="claimant-insurance" placeholder="Carrier name">
+            <select class="form-control" id="claimant-insurance">
+              <option disabled selected>Please make a selection</option>
+              <option>Acium</option>
+              <option>Allstate</option>
+              <option>Amica</option>
+              <option>Farmers</option>
+              <option>Geico</option>
+              <option>Nationwide</option>
+              <option>Progressive</option>
+              <option>Safe Auto</option>
+              <option>State Farm</option>
+              <option>The General</option>
+            </select>
+            
           </div>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <span>
+            <img id="status-symbol" src="">
+          </span>
+
+          <button id="submit-button" type="submit" class="btn btn-primary">Submit</button>
+          
         </form>
 
 

@@ -26,29 +26,37 @@
           <!-- Start of create new claim link -->
           <div id="create-new-claim-link" class="row links">
             <a class="link btn-block" href="/new-claim/new-claim.html">Create New Claim</a>
-          </div> <!-- End of create new claim link -->
+          </div> 
+          <!-- End of create new claim link -->
 
           <!-- Start of manage claims link -->
-          <div id="manage-claims-link" class="row links">
+          <!-- <div id="manage-claims-link" class="row links">
             <a class="link btn-block" href="#">Manage Claims</a>
-          </div> <!-- End of manage claims link -->
+          </div> End of manage claims link -->
 
           <!-- Start of view claims link -->
           <div id="manage-claims-link" class="row links">
             <a class="link btn-block" href="#">View Claims</a>
-          </div> <!-- End of view claims link -->
+          </div> 
+          <!-- End of view claims link -->
 
-        </div> <!-- End of link container -->
+        </div> 
+        <!-- End of link container -->
 
         <!-- Start of claim container -->
         <div id="view-pane" class="col-md view-pane">
 
           <h1>Claim View</h1>
 
+          <!-- Start of name filter -->
+          <input type="text" id="name-filter" class="form-control-sm" placeholder="Search by member name">
+          <!-- End of name filter -->
+
           <!-- Start of claim table -->
-          <table class="table table-hover">
+          <table id="claims-table" class="table table-hover">
             <thead>
               <tr>
+                <th scope="col">Claim #</th>
                 <th scope="col">Member Name</th>
                 <th scope="col">Policy #</th>
                 <th scope="col">Vehicle</th>
@@ -59,9 +67,10 @@
                 <th id="manage-head" scope="col">Manage</th>
               </tr>
             </thead>
-            <tbody id="body-entry-point">
+            <tbody id="tbody-entry">
             </tbody>
-          </table> <!-- End of claim table -->
+          </table> 
+          <!-- End of claim table -->
 
         </div> <!-- End of claim container -->
       </div> <!-- End of app -->
