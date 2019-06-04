@@ -36,7 +36,7 @@
 
           <!-- Start of view claims link -->
           <div id="manage-claims-link" class="row links">
-            <a class="link btn-block" href="#">View Claims</a>
+            <a class="link btn-block" href="#">Manage Claims</a>
           </div> 
           <!-- End of view claims link -->
 
@@ -76,9 +76,10 @@
       </div> <!-- End of app -->
     </div> <!-- End of main view -->
 
+    <!-- Start of update claim modal -->
     <div class="modal fade" id="update-claim-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Update Existing Claim</h5>
@@ -87,24 +88,52 @@
           <div id="update-claim-view" class="modal-body">
             <form id="update-form">
               <div class="form-group">
-                <label for="recipient-name" class="col-form-label">First Name</label>
-                <input type="text" class="form-control" id="first-name">
+                <label for="claim-number" class="col-form-label">Claim Number</label>
+                <input type="text" class="form-control" id="claim-number-modal" disabled>
               </div>
               <div class="form-group">
-                <label for="message-text" class="col-form-label">Last Name</label>
-                <input type="text" class="form-control" id="last-name">
+                <label for="member-name" class="col-form-label">Member Name</label>
+                <input type="text" class="form-control" id="member-name-modal">
               </div>
               <div class="form-group">
-                <label for="message-text" class="col-form-label">Email</label>
-                <input type="email" class="form-control" id="email">
+                <label for="policy-number" class="col-form-label">Policy Number</label>
+                <input type="text" class="form-control" id="policy-num-modal">
               </div>
               <div class="form-group">
-                <label for="message-text" class="col-form-label">Phone</label>
-                <input type="text" class="form-control" id="phone-number">
+                <label for="vehicle" class="col-form-label">Vehicle</label>
+                <input type="text" class="form-control" id="vehicle-modal">
               </div>
               <div class="form-group">
-                <label for="message-text" class="col-form-label">Notes</label>
-                <textarea class="form-control" id="notes"></textarea>
+                <label for="at-fault" class="col-form-label">At Fault</label>
+                <select class="form-control" id="at-fault-modal">
+                  <option disabled selected>Please make a selection</option>
+                  <option>true</option>
+                  <option>false</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="claimant-name">Claimant Name</label>
+                <input type="text" class="form-control" id="claimant-name-modal">
+              </div>
+              <div class="form-group">
+                <label for="claimant-vehicle">Claimant Vehicle</label>
+                <input type="text" class="form-control" id="claimant-vehicle-modal">
+              </div>
+              <div class="form-group">
+                <label for="claimant-insurance">Claimant Insurance</label>
+                <select class="form-control" id="claimant-insurance-modal">
+                  <option disabled selected>Please make a selection</option>
+                  <option>Acium</option>
+                  <option>Allstate</option>
+                  <option>Amica</option>
+                  <option>Farmers</option>
+                  <option>Geico</option>
+                  <option>Nationwide</option>
+                  <option>Progressive</option>
+                  <option>Safe Auto</option>
+                  <option>State Farm</option>
+                  <option>The General</option>
+                </select>
               </div>
             </form>
           </div>
@@ -115,7 +144,7 @@
         </div>
       </div>
     </div>
-
+    <!-- End update claim modal -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -124,6 +153,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+    
     <script src="/assets/scripts/script.js"></script>
   </body>
 </html>

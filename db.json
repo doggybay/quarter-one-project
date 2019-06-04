@@ -1,5 +1,6 @@
 {
-  "claims": [{
+  "claims": [
+    {
       "id": 1,
       "policyNumber": 1850248,
       "memberName": "Franks Holland",
@@ -62,7 +63,7 @@
     {
       "policyNumber": "1850248",
       "memberName": "Franks Holland",
-      "atFault": "False",
+      "atFault": "false",
       "vehicle": "2011 Acura TSX",
       "opName": "Jane Smith",
       "opVehicle": "2007 Scion TC",
@@ -72,7 +73,7 @@
     {
       "policyNumber": "1262837",
       "memberName": "John Doe",
-      "atFault": "True",
+      "atFault": "true",
       "vehicle": "2005 Acura RSX",
       "opName": "Robert Paulson",
       "opVehicle": "1967 Ford Mustange",

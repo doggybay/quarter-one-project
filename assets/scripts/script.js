@@ -1,16 +1,16 @@
-//Claim insertion
+//get request for claims db
 axios.get(`http://localhost:3000/claims`)
   .then(response => {
     let claims = response.data;
     let tbodyEntry = document.getElementById('tbody-entry');
 
-    //console.log('claims: ', claims);
-
+    //looping through claims
     claims.forEach(claim => {
+      //creating new table row
       let newClaim = document.createElement('tr');
       
+      //creating new claim
       newClaim.innerHTML = `
-      <tr>
         <td id="claim-num">${claim.id}</td>
         <td id="member-name">${claim.memberName}</td>
         <td id="policy-num">${claim.policyNumber}</td>
@@ -23,19 +23,31 @@ axios.get(`http://localhost:3000/claims`)
           <button type="button" class="btn-sm btn btn-danger">Delete</button>
           <button type="button" class="ml-2 btn btn-sm btn-warning" data-toggle="modal" data-target="#update-claim-modal">Edit</button>
         </td>
-      </tr>
       `;
 
-      //Insert new claim into the claim view
+      //insert new claim into the table
       tbodyEntry.appendChild(newClaim);
 
-      
-      
-      //start of button listener
+      //start of new claim row button listener
       newClaim.addEventListener('click', () => {
+
+        //setting variable for the button text
         let buttonType = event.srcElement.innerText;
-        
+
+        //setting variables for the modal inputs and update button
+        let updateButton = document.getElementById('update-button');
+        let claimNumberModal = document.getElementById('claim-number-modal');
+        let memberNameModal = document.getElementById('member-name-modal');
+        let policyNumModal = document.getElementById('policy-num-modal');
+        let vehicleModal = document.getElementById('vehicle-modal');
+        let atFaultModal = document.getElementById('at-fault-modal');
+        let claimantNameModal = document.getElementById('claimant-name-modal');
+        let claimantVehicleModal = document.getElementById('claimant-vehicle-modal');
+        let claimantInsuranceModal = document.getElementById('claimant-insurance-modal');
+
+        //condition to check the button text and execute corresponding task
         if (buttonType === 'Delete') {
+
           axios.delete(`http://localhost:3000/claims/${claim.id}`, {
             data: {
               id: `${claim.id}`,
@@ -50,12 +62,32 @@ axios.get(`http://localhost:3000/claims`)
           });
         }
         else if (buttonType === 'Edit') {
-          
-        }
-        
-        
-      }); //end of delete button listener
 
+          claimNumberModal.value = `${claim.id}`;
+          memberNameModal.value = `${claim.memberName}`;
+          policyNumModal.value = `${claim.policyNumber}`;
+          vehicleModal.value = `${claim.vehicle}`;
+          atFaultModal.value = `${claim.atFault}`;
+          claimantNameModal.value = `${claim.opName}`;
+          claimantVehicleModal.value = `${claim.opVehicle}`;
+          claimantInsuranceModal.value = `${claim.opInsurance}`;
+
+        }
+
+        //modal update button click listener
+        updateButton.addEventListener('click', () => {
+          axios.patch(`http://localhost:3000/claims/${claim.id}`,
+            {
+              policyNumber: policyNumModal.value,
+              memberName: memberNameModal.value,
+              atFault: atFaultModal.value,
+              opInsurance: claimantInsuranceModal.value,
+              opName: claimantNameModal.value,
+              opVehicle: claimantVehicleModal.value,
+              vehicle: vehicleModal.value
+            });
+        }); //end of modal update button click listener
+      }); //end of new claim row button listener
 
       //TODO possible button hide
       //let buttons = newClaim.children[8].children;
