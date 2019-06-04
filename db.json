@@ -2,9 +2,9 @@
   "claims": [
     {
       "id": 1,
-      "policyNumber": 1850248,
+      "policyNumber": "1850248",
       "memberName": "Franks Holland",
-      "atFault": false,
+      "atFault": "false",
       "vehicle": "2011 Acura TSX",
       "opName": "Britt Gould",
       "opVehicle": "2010 Toyota Camry",
@@ -89,6 +89,26 @@
       "opVehicle": "2006 Honda Civic",
       "opInsurance": "Farmers",
       "id": 9
+    },
+    {
+      "policyNumber": "0058761",
+      "memberName": "Peggy Hill",
+      "atFault": "false",
+      "vehicle": "2005 Ford F150",
+      "opName": "Dale Gribble",
+      "opVehicle": "2005 Chevy Astro",
+      "opInsurance": "The General",
+      "id": 10
+    },
+    {
+      "policyNumber": "1262837",
+      "memberName": "John Doe",
+      "atFault": "true",
+      "vehicle": "1998 Honda Civic",
+      "opName": "John Jones",
+      "opVehicle": "2016 Chevy Malibu",
+      "opInsurance": "Geico",
+      "id": 11
     }
   ]
 }

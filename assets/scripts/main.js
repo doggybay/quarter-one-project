@@ -36,56 +36,22 @@ axios.get(`http://localhost:3000/claims`)
 
         //setting variables for the modal inputs and update button
         let updateButton = document.getElementById('update-button');
-        let claimNumberModal = document.getElementById('claim-number-modal');
-        let memberNameModal = document.getElementById('member-name-modal');
-        let policyNumModal = document.getElementById('policy-num-modal');
-        let vehicleModal = document.getElementById('vehicle-modal');
-        let atFaultModal = document.getElementById('at-fault-modal');
-        let claimantNameModal = document.getElementById('claimant-name-modal');
-        let claimantVehicleModal = document.getElementById('claimant-vehicle-modal');
-        let claimantInsuranceModal = document.getElementById('claimant-insurance-modal');
-
+        
         //condition to check the button text and execute corresponding task
         if (buttonType === 'Delete') {
-
-          axios.delete(`http://localhost:3000/claims/${claim.id}`, {
-            data: {
-              id: `${claim.id}`,
-              policyNumber: `${claim.policyNumber}`,
-              memberName: `${claim.memberName}`,
-              atFault: `${claim.atFault}`,
-              opInsurance: `${claim.opInsurance}`,
-              opName: `${claim.opName}`,
-              opVehicle: `${claim.opVehicle}`,
-              vehicle: `${claim.vehicle}`
-            }
-          });
+          deleteClaim(claim);
         }
         else if (buttonType === 'Edit') {
 
-          claimNumberModal.value = `${claim.id}`;
-          memberNameModal.value = `${claim.memberName}`;
-          policyNumModal.value = `${claim.policyNumber}`;
-          vehicleModal.value = `${claim.vehicle}`;
-          atFaultModal.value = `${claim.atFault}`;
-          claimantNameModal.value = `${claim.opName}`;
-          claimantVehicleModal.value = `${claim.opVehicle}`;
-          claimantInsuranceModal.value = `${claim.opInsurance}`;
+          fillUpdateForm(claim);
 
         }
 
         //modal update button click listener
         updateButton.addEventListener('click', () => {
-          axios.patch(`http://localhost:3000/claims/${claim.id}`,
-            {
-              policyNumber: policyNumModal.value,
-              memberName: memberNameModal.value,
-              atFault: atFaultModal.value,
-              opInsurance: claimantInsuranceModal.value,
-              opName: claimantNameModal.value,
-              opVehicle: claimantVehicleModal.value,
-              vehicle: vehicleModal.value
-            });
+
+          updateClaim(claim);
+          
         }); //end of modal update button click listener
       }); //end of new claim row button listener
 
@@ -120,37 +86,12 @@ axios.get(`http://localhost:3000/claims`)
     }); //end of forEach
 
     /*------------ Search Filter -------------*/
-
     let table = tbodyEntry.children;
     let input = document.getElementById('name-filter');
-
-    //Listening to the keys
+    //Listening to the keys to filter
     input.addEventListener('keyup', () => {
-      let nameFilter = input.value.toLowerCase();
-
-      //Looping through the table rows
-      for (let i = 0; i < table.length; i++) {
-
-        //Targeting the member name table body tag
-        let allMemName = table[i].cells[1];
-        
-        //Check if the table body tag exist
-        if (allMemName) {
-
-          //Setting variable for names with no tags
-          let fullNames = allMemName.innerText.toLowerCase();
-
-          //Takes the key pressed and filters the letters that exist 
-          if (fullNames.indexOf(nameFilter) > -1) {
-            table[i].style.display = "";
-          } else {
-            table[i].style.display = "none";
-          }
-        }
-      }
+      filterNames(input, table);
     });
 
   })
   .catch(error => console.log('Error: ', error));
-
-  
