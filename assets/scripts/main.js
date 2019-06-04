@@ -9,21 +9,7 @@ axios.get(`http://localhost:3000/claims`)
       //creating new table row
       let newClaim = document.createElement('tr');
       
-      //creating new claim
-      newClaim.innerHTML = `
-        <td id="claim-num">${claim.id}</td>
-        <td id="member-name">${claim.memberName}</td>
-        <td id="policy-num">${claim.policyNumber}</td>
-        <td id="vehicle">${claim.vehicle}</td>
-        <td id="fault">${claim.atFault}</td>
-        <td id="claimant-name">${claim.opName}</td>
-        <td id="claimant-vehicle">${claim.opVehicle}</td>
-        <td id="claimant-insurance">${claim.opInsurance}</td>
-        <td id="manage">
-          <button type="button" class="btn-sm btn btn-danger">Delete</button>
-          <button type="button" class="ml-2 btn btn-sm btn-warning" data-toggle="modal" data-target="#update-claim-modal">Edit</button>
-        </td>
-      `;
+      makeClaimView(claim, newClaim);
 
       //insert new claim into the table
       tbodyEntry.appendChild(newClaim);
@@ -47,7 +33,7 @@ axios.get(`http://localhost:3000/claims`)
 
         }
 
-        //modal update button click listener
+        //modal update button listener
         updateButton.addEventListener('click', () => {
 
           updateClaim(claim);

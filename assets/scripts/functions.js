@@ -1,3 +1,23 @@
+/********** Creating Claim View **********/
+function makeClaimView(data, element) {
+
+    //creating new claim
+  return element.innerHTML = `
+      <td id="claim-num">${data.id}</td>
+      <td id="member-name">${data.memberName}</td>
+      <td id="policy-num">${data.policyNumber}</td>
+      <td id="vehicle">${data.vehicle}</td>
+      <td id="fault">${data.atFault}</td>
+      <td id="claimant-name">${data.opName}</td>
+      <td id="claimant-vehicle">${data.opVehicle}</td>
+      <td id="claimant-insurance">${data.opInsurance}</td>
+      <td id="manage">
+        <button type="button" class="btn-sm btn btn-danger">Delete</button>
+        <button type="button" class="ml-2 btn btn-sm btn-warning" data-toggle="modal" data-target="#update-claim-modal">Edit</button>
+      </td>
+    `;
+}
+
 /********** Filter by Name Function **********/
 function filterNames(input, table) {
   let nameFilter = input.value.toLowerCase();
