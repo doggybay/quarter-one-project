@@ -21,7 +21,7 @@ axios.get(`http://localhost:3000/claims`)
         <td id="claimant-insurance">${claim.opInsurance}</td>
         <td id="manage">
           <button type="button" class="btn-sm btn btn-danger">Delete</button>
-          <button type="button" class="ml-2 btn btn-sm btn-warning">Edit</button>
+          <button type="button" class="ml-2 btn btn-sm btn-warning" data-toggle="modal" data-target="#update-claim-modal">Edit</button>
         </td>
       </tr>
       `;
@@ -48,8 +48,9 @@ axios.get(`http://localhost:3000/claims`)
               vehicle: `${claim.vehicle}`
             }
           });
-        } else if (buttonType === 'Edit') {
-          console.dir(buttonType);
+        }
+        else if (buttonType === 'Edit') {
+          
         }
         
         

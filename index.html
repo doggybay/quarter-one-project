@@ -76,8 +76,45 @@
       </div> <!-- End of app -->
     </div> <!-- End of main view -->
 
-
-
+    <div class="modal fade" id="update-claim-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Update Existing Claim</h5>
+            
+          </div>
+          <div id="update-claim-view" class="modal-body">
+            <form id="update-form">
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">First Name</label>
+                <input type="text" class="form-control" id="first-name">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Last Name</label>
+                <input type="text" class="form-control" id="last-name">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Email</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Phone</label>
+                <input type="text" class="form-control" id="phone-number">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Notes</label>
+                <textarea class="form-control" id="notes"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="update-button">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
