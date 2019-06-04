@@ -3,7 +3,7 @@
 let newClaimForm = document.getElementById('new-claim-form');
 let submitButton = document.getElementById('submit-button');
 
-submitButton.addEventListener('click', () => {
+newClaimForm.addEventListener('submit', () => {
   let policyNum = newClaimForm[1].value;
   let memberName = newClaimForm[0].value;
   let atFault = newClaimForm[3].value;
@@ -14,7 +14,7 @@ submitButton.addEventListener('click', () => {
 
   if (policyNum === "" || memberName === "" || vehicle === "" || opName === "" || opVehicle === "") {
     alert("Please fill in missing fields");
-    return false;
+    event.preventDefault();
   } else if (atFault === "Please make a selection" || opInsurance === "Please make a selection") {
     alert("Please make a selection");
     event.preventDefault();
@@ -32,7 +32,7 @@ submitButton.addEventListener('click', () => {
       })
       .then(response => console.log(response.data))
       .catch(error => console.log(error));
-    
   }
-
+  
 });
+
