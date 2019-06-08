@@ -97,6 +97,7 @@ function updateClaim(claim) {
 /********** New Claim Form Validate and Submit Function **********/
 
 function validateAndSubmit(event, newClaimForm) {
+  let statusSymbol = document.getElementById('status-symbol');
   let policyNum = newClaimForm[1].value;
   let memberName = newClaimForm[0].value;
   let atFault = newClaimForm[3].value;
@@ -142,18 +143,22 @@ function validateAndSubmit(event, newClaimForm) {
 
   } else {
 
-    axios.post(`http://localhost:3000/claims`, {
-
-        policyNumber: `${newClaimForm[1].value}`,
-        memberName: `${newClaimForm[0].value}`,
-        atFault: `${newClaimForm[3].value}`,
-        vehicle: `${newClaimForm[2].value}`,
-        opName: `${newClaimForm[4].value}`,
-        opVehicle: `${newClaimForm[5].value}`,
-        opInsurance: `${newClaimForm[6].value}`
-
-      })
-      .then(response => console.log(response.data))
-      .catch(error => console.log(error));
+    postNewClaim();
   }
+}
+
+function postNewClaim() {
+  axios.post(`http://localhost:3000/claims`, {
+
+    policyNumber: `${newClaimForm[1].value}`,
+    memberName: `${newClaimForm[0].value}`,
+    atFault: `${newClaimForm[3].value}`,
+    vehicle: `${newClaimForm[2].value}`,
+    opName: `${newClaimForm[4].value}`,
+    opVehicle: `${newClaimForm[5].value}`,
+    opInsurance: `${newClaimForm[6].value}`
+
+  })
+    .then(response => console.log(response.data))
+    .catch(error => console.log(error));
 }

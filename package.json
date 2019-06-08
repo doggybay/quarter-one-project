@@ -20,5 +20,8 @@
   "homepage": "https://github.com/gSchool/usaa-phx-quarter-one-project#readme",
   "devDependencies": {
     "json-server": "^0.15.0"
+  },
+  "dependencies": {
+    "npm": "^6.9.0"
   }
 }
