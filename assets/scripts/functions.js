@@ -1,5 +1,11 @@
 /********** Creating Claim View **********/
 function makeClaimView(data, element) {
+  let fault = '';
+  if (`${data.atFault}` === 'true') {
+    fault = 'At-Fault';
+  } else {
+    fault = 'No-Fault';
+  }
 
     //creating new claim
   return element.innerHTML = `
@@ -7,7 +13,7 @@ function makeClaimView(data, element) {
       <td id="member-name">${data.memberName}</td>
       <td id="policy-num">${data.policyNumber}</td>
       <td id="vehicle">${data.vehicle}</td>
-      <td id="fault">${data.atFault}</td>
+      <td id="fault">${fault}</td>
       <td id="claimant-name">${data.opName}</td>
       <td id="claimant-vehicle">${data.opVehicle}</td>
       <td id="claimant-insurance">${data.opInsurance}</td>
@@ -17,6 +23,7 @@ function makeClaimView(data, element) {
       </td>
     `;
 }
+
 
 /********** Filter by Name Function **********/
 function filterNames(input, table) {
@@ -72,11 +79,18 @@ let claimantVehicleModal = document.getElementById('claimant-vehicle-modal');
 let claimantInsuranceModal = document.getElementById('claimant-insurance-modal');
 
 function fillUpdateForm(claim) {
+  let fault = '';
+  if (`${claim.atFault}` === 'true') {
+    fault = 'At-Fault';
+  } else {
+    fault = 'No-Fault';
+  }
+
   claimNumberModal.value = `${claim.id}`;
   memberNameModal.value = `${claim.memberName}`;
   policyNumModal.value = `${claim.policyNumber}`;
   vehicleModal.value = `${claim.vehicle}`;
-  atFaultModal.value = `${claim.atFault}`;
+  atFaultModal.value = `${fault}`;
   claimantNameModal.value = `${claim.opName}`;
   claimantVehicleModal.value = `${claim.opVehicle}`;
   claimantInsuranceModal.value = `${claim.opInsurance}`;
@@ -148,11 +162,18 @@ function validateAndSubmit(event, newClaimForm) {
 }
 
 function postNewClaim() {
+  let fault = '';
+  if (newClaimForm[3].value === 'At-Fault') {
+    fault = 'true';
+  } else {
+    fault = 'false';
+  }
+
   axios.post(`http://localhost:3000/claims`, {
 
     policyNumber: `${newClaimForm[1].value}`,
     memberName: `${newClaimForm[0].value}`,
-    atFault: `${newClaimForm[3].value}`,
+    atFault: `${fault}`,
     vehicle: `${newClaimForm[2].value}`,
     opName: `${newClaimForm[4].value}`,
     opVehicle: `${newClaimForm[5].value}`,
