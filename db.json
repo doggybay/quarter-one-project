@@ -4,7 +4,7 @@
       "id": 1,
       "policyNumber": "1850248",
       "memberName": "Franks Holland",
-      "atFault": "false",
+      "atFault": "true",
       "vehicle": "2011 Acura TSX",
       "opName": "Britt Gould",
       "opVehicle": "2010 Toyota Camry",
@@ -12,9 +12,9 @@
     },
     {
       "id": 2,
-      "policyNumber": 1850249,
+      "policyNumber": "1850249",
       "memberName": "Adele Herring",
-      "atFault": false,
+      "atFault": "true",
       "vehicle": "2000 Chevy Silverado",
       "opName": "Burnett Terry",
       "opVehicle": "1998 Toyota 4Runner",
@@ -111,16 +111,6 @@
       "id": 12
     },
     {
-      "policyNumber": "1354861",
-      "memberName": "Will HJopes",
-      "atFault": "false",
-      "vehicle": "2015 Honda Accord",
-      "opName": "Carl James",
-      "opVehicle": "2008 Chevy Blazer",
-      "opInsurance": "Farmers",
-      "id": 13
-    },
-    {
       "policyNumber": "1874365",
       "memberName": "Frank Bravos",
       "atFault": "false",
@@ -129,6 +119,16 @@
       "opVehicle": "2016 Chrysler 300",
       "opInsurance": "Farmers",
       "id": 14
+    },
+    {
+      "policyNumber": "1235867",
+      "memberName": "James Glass",
+      "atFault": "true",
+      "vehicle": "2016 Toyota Tundra",
+      "opName": "Harry Blue",
+      "opVehicle": "2015 Chevy Aveo",
+      "opInsurance": "State Farm",
+      "id": 15
     }
   ]
 }

@@ -1,11 +1,7 @@
 /********** Creating Claim View **********/
 function makeClaimView(data, element) {
   let fault = '';
-  if (`${data.atFault}` === 'true') {
-    fault = 'At-Fault';
-  } else {
-    fault = 'No-Fault';
-  }
+  `${data.atFault}` === 'true' ? fault = 'At-Fault' : fault = 'No-Fault';
 
     //creating new claim
   return element.innerHTML = `
@@ -80,11 +76,7 @@ let claimantInsuranceModal = document.getElementById('claimant-insurance-modal')
 
 function fillUpdateForm(claim) {
   let fault = '';
-  if (`${claim.atFault}` === 'true') {
-    fault = 'At-Fault';
-  } else {
-    fault = 'No-Fault';
-  }
+  `${claim.atFault}` === 'true' ? fault = 'At-Fault' : fault = 'No-Fault';
 
   claimNumberModal.value = `${claim.id}`;
   memberNameModal.value = `${claim.memberName}`;
@@ -97,10 +89,13 @@ function fillUpdateForm(claim) {
 }
 
 function updateClaim(claim) {
+  let fault = '';
+  atFaultModal.value === 'At-Fault' ? fault = 'true' : fault = 'false'; 
+  
   axios.patch(`http://localhost:3000/claims/${claim.id}`, {
     policyNumber: policyNumModal.value,
     memberName: memberNameModal.value,
-    atFault: atFaultModal.value,
+    atFault: fault,
     opInsurance: claimantInsuranceModal.value,
     opName: claimantNameModal.value,
     opVehicle: claimantVehicleModal.value,
@@ -111,7 +106,7 @@ function updateClaim(claim) {
 /********** New Claim Form Validate and Submit Function **********/
 
 function validateAndSubmit(event, newClaimForm) {
-  let statusSymbol = document.getElementById('status-symbol');
+
   let policyNum = newClaimForm[1].value;
   let memberName = newClaimForm[0].value;
   let atFault = newClaimForm[3].value;
@@ -163,11 +158,8 @@ function validateAndSubmit(event, newClaimForm) {
 
 function postNewClaim() {
   let fault = '';
-  if (newClaimForm[3].value === 'At-Fault') {
-    fault = 'true';
-  } else {
-    fault = 'false';
-  }
+  newClaimForm[3].value === 'At-Fault' ? fault = 'true' : fault = 'false';
+  
 
   axios.post(`http://localhost:3000/claims`, {
 
