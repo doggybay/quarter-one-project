@@ -151,8 +151,22 @@ function validateAndSubmit(event, newClaimForm) {
     event.preventDefault();
 
   } else {
-
-    postNewClaim();
+    event.preventDefault();
+    let statusPic = document.getElementById('status-pic');
+    if (atFault === 'At-Fault') {
+      statusPic.setAttribute('src', '/assets/images/sad.png');
+      window.setTimeout(() => {
+        postNewClaim();
+        location.assign('/index.html')
+      }, 5000)
+    } else {
+      statusPic.setAttribute('src', '/assets/images/thumbs-up.png');
+      window.setTimeout(() => {
+        postNewClaim();
+        location.assign('/index.html')
+      }, 5000)
+    }
+    
   }
 }
 
