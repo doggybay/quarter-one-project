@@ -1,9 +1,9 @@
 /********** Creating Claim View **********/
 function makeClaimView(data, element) {
   let fault = '';
+
   `${data.atFault}` === 'true' ? fault = 'At-Fault' : fault = 'No-Fault';
 
-    //creating new claim
   return element.innerHTML = `
       <td id="claim-num">${data.id}</td>
       <td id="member-name">${data.memberName}</td>
@@ -19,7 +19,6 @@ function makeClaimView(data, element) {
       </td>
     `;
 }
-
 
 /********** Filter by Name Function **********/
 function filterNames(input, table) {
@@ -64,18 +63,11 @@ function deleteClaim(claim) {
 }
 
 /********** Update Claim Variables and Functions **********/
-
-let claimNumberModal = document.getElementById('claim-number-modal');
-let memberNameModal = document.getElementById('member-name-modal');
-let policyNumModal = document.getElementById('policy-num-modal');
-let vehicleModal = document.getElementById('vehicle-modal');
-let atFaultModal = document.getElementById('at-fault-modal');
-let claimantNameModal = document.getElementById('claimant-name-modal');
-let claimantVehicleModal = document.getElementById('claimant-vehicle-modal');
-let claimantInsuranceModal = document.getElementById('claimant-insurance-modal');
+[claimNumberModal, memberNameModal, policyNumModal, vehicleModal, atFaultModal, claimantNameModal, claimantVehicleModal, claimantInsuranceModal] = [document.getElementById('claim-number-modal'), document.getElementById('member-name-modal'), document.getElementById('policy-num-modal'), document.getElementById('vehicle-modal'), document.getElementById('at-fault-modal'), document.getElementById('claimant-name-modal'), document.getElementById('claimant-vehicle-modal'), document.getElementById('claimant-insurance-modal')]
 
 function fillUpdateForm(claim) {
   let fault = '';
+
   `${claim.atFault}` === 'true' ? fault = 'At-Fault' : fault = 'No-Fault';
 
   claimNumberModal.value = `${claim.id}`;
@@ -90,8 +82,9 @@ function fillUpdateForm(claim) {
 
 function updateClaim(claim) {
   let fault = '';
+
   atFaultModal.value === 'At-Fault' ? fault = 'true' : fault = 'false'; 
-  
+
   axios.patch(`http://localhost:3000/claims/${claim.id}`, {
     policyNumber: policyNumModal.value,
     memberName: memberNameModal.value,
@@ -106,37 +99,38 @@ function updateClaim(claim) {
 /********** New Claim Form Validate and Submit Function **********/
 
 function validateAndSubmit(event, newClaimForm) {
-  [policyNum, memberName, atFault, vehicle, opName, opVehicle, opInsurance] = [newClaimForm[1].value, newClaimForm[0].value, newClaimForm[3].value, newClaimForm[2].value, newClaimForm[4].value, newClaimForm[5].value, newClaimForm[6].value]
+  [atFault, opInsurance] = [newClaimForm[3].value, newClaimForm[6].value];
 
   event.preventDefault();
 
   if (atFault === "Please make a selection" || opInsurance === "Please make a selection") {
-
     alert("Please make a selection");
-
   } else {
     let statusPic = document.getElementById('status-pic');
+    let subBtnDiv = document.getElementById('button-div');
+    let subBtn = document.getElementById('submit-button');
+
     if (atFault === 'At-Fault') {
+      subBtnDiv.removeChild(subBtn);
       statusPic.setAttribute('src', '/assets/images/sad.png');
       window.setTimeout(() => {
         postNewClaim();
-        location.assign('/index.html')
-      }, 5000)
+        location.assign('/index.html');
+      }, 5000);
     } else {
+      subBtnDiv.removeChild(subBtn)
       statusPic.setAttribute('src', '/assets/images/thumbs-up.png');
       window.setTimeout(() => {
         postNewClaim();
-        location.assign('/index.html')
-      }, 5000)
+        location.assign('/index.html');
+      }, 5000);
     }
-    
   }
 }
 
 function postNewClaim() {
   let fault = '';
   newClaimForm[3].value === 'At-Fault' ? fault = 'true' : fault = 'false';
-  
 
   axios.post(`http://localhost:3000/claims`, {
 
