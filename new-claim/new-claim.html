@@ -46,17 +46,17 @@
         <form id="new-claim-form" name="new-claim-form">
           <div class="form-group">
             <label for="member-name">Member Name</label>
-            <input type="text" class="form-control" id="member-name" placeholder="Enter full name">
+            <input type="text" class="form-control" id="member-name" placeholder="Enter full name" required>
           </div>
 
           <div class="form-group">
             <label for="policy-num">Policy Number</label>
-            <input type="number" class="form-control" id="policy-num" placeholder="Enter policy #">
+            <input type="number" class="form-control" id="policy-num" placeholder="Enter policy #" required>
           </div>
           
           <div class="form-group">
             <label for="member-vehicle">Vehicle (Year, Make, Model)</label>
-            <input type="text" class="form-control" id="member-vehicle" placeholder="Year Make Model">
+            <input type="text" class="form-control" id="member-vehicle" placeholder="Year Make Model" required>
           </div>
 
           <div class="form-group">
@@ -70,12 +70,12 @@
 
           <div class="form-group">
             <label for="claimant-name">Claimant Name</label>
-            <input type="text" class="form-control" id="claimant-name" placeholder="Enter claimant full name">
+            <input type="text" class="form-control" id="claimant-name" placeholder="Enter claimant full name" required>
           </div>
 
           <div class="form-group">
             <label for="claimant-vehicle">Claimant Vehicle</label>
-            <input type="text" class="form-control" id="claimant-vehicle" placeholder="Year Make Model">
+            <input type="text" class="form-control" id="claimant-vehicle" placeholder="Year Make Model" required>
           </div>
 
           <div class="form-group">
@@ -96,9 +96,9 @@
             
           </div>
 
-          <span>
+          <>
             <img id="status-pic" src="">
-          </span>
+        </div>
 
           <button id="submit-button" type="submit" class="btn btn-primary">Submit</button>
           

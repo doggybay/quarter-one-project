@@ -107,41 +107,10 @@ function updateClaim(claim) {
 
 function validateAndSubmit(event, newClaimForm) {
   [policyNum, memberName, atFault, vehicle, opName, opVehicle, opInsurance] = [newClaimForm[1].value, newClaimForm[0].value, newClaimForm[3].value, newClaimForm[2].value, newClaimForm[4].value, newClaimForm[5].value, newClaimForm[6].value]
-  
-  // let policyNum = newClaimForm[1].value;
-  // let memberName = newClaimForm[0].value;
-  // let atFault = newClaimForm[3].value;
-  // let vehicle = newClaimForm[2].value;
-  // let opName = newClaimForm[4].value;
-  // let opVehicle = newClaimForm[5].value;
-  // let opInsurance = newClaimForm[6].value;
 
   event.preventDefault();
-  if (memberName === "") {
-    alert("Please fill in member name");
 
-  } else if (policyNum === "") {
-
-    alert("Please fill in policy number");
-
-  } else if (vehicle === "") {
-
-    alert("Please fill in vehicle");
-    
-
-  } else if (opName === "") {
-
-    alert("Please fill in claimant name");
-
-  } else if (opVehicle === "") {
-
-    alert("Please fill in claimant vehicle");
-
-  } else if (opInsurance === "") {
-
-    alert("Please fill in claimant insurance");
-
-  } else if (atFault === "Please make a selection" || opInsurance === "Please make a selection") {
+  if (atFault === "Please make a selection" || opInsurance === "Please make a selection") {
 
     alert("Please make a selection");
 
