@@ -106,52 +106,46 @@ function updateClaim(claim) {
 /********** New Claim Form Validate and Submit Function **********/
 
 function validateAndSubmit(event, newClaimForm) {
+  [policyNum, memberName, atFault, vehicle, opName, opVehicle, opInsurance] = [newClaimForm[1].value, newClaimForm[0].value, newClaimForm[3].value, newClaimForm[2].value, newClaimForm[4].value, newClaimForm[5].value, newClaimForm[6].value]
+  
+  // let policyNum = newClaimForm[1].value;
+  // let memberName = newClaimForm[0].value;
+  // let atFault = newClaimForm[3].value;
+  // let vehicle = newClaimForm[2].value;
+  // let opName = newClaimForm[4].value;
+  // let opVehicle = newClaimForm[5].value;
+  // let opInsurance = newClaimForm[6].value;
 
-  let policyNum = newClaimForm[1].value;
-  let memberName = newClaimForm[0].value;
-  let atFault = newClaimForm[3].value;
-  let vehicle = newClaimForm[2].value;
-  let opName = newClaimForm[4].value;
-  let opVehicle = newClaimForm[5].value;
-  let opInsurance = newClaimForm[6].value;
-
+  event.preventDefault();
   if (memberName === "") {
-
     alert("Please fill in member name");
-    event.preventDefault();
 
   } else if (policyNum === "") {
 
     alert("Please fill in policy number");
-    event.preventDefault();
 
   } else if (vehicle === "") {
 
     alert("Please fill in vehicle");
-    event.preventDefault();
+    
 
   } else if (opName === "") {
 
     alert("Please fill in claimant name");
-    event.preventDefault();
 
   } else if (opVehicle === "") {
 
     alert("Please fill in claimant vehicle");
-    event.preventDefault();
 
   } else if (opInsurance === "") {
 
     alert("Please fill in claimant insurance");
-    event.preventDefault();
 
   } else if (atFault === "Please make a selection" || opInsurance === "Please make a selection") {
 
     alert("Please make a selection");
-    event.preventDefault();
 
   } else {
-    event.preventDefault();
     let statusPic = document.getElementById('status-pic');
     if (atFault === 'At-Fault') {
       statusPic.setAttribute('src', '/assets/images/sad.png');
